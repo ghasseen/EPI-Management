@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <footer th:fragment="footer" class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Course Management System</h5>
+                    <p>A comprehensive platform for managing courses, students, and instructors.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/}" class="text-white">Home</a></li>
+                        <li><a th:href="@{/courses}" class="text-white">Courses</a></li>
+                        <li><a th:href="@{/students}" class="text-white">Students</a></li>
+                        <li><a th:href="@{/instructors}" class="text-white">Instructors</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>API Documentation</h5>
+                    <ul class="list-unstyled">
+                        <li><a th:href="@{/swagger-ui.html}" class="text-white" target="_blank">Swagger UI</a></li>
+                        <li><a th:href="@{/api-docs}" class="text-white" target="_blank">API Docs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2023-2024 EPI Sousse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

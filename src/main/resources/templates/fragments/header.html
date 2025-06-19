@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <header th:fragment="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" th:href="@{/}">Course Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/courses}">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/students}">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/instructors}">Instructors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" th:href="@{/categories}">Categories</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex" sec:authorize="!isAuthenticated()">
+                        <a class="btn btn-outline-light me-2" th:href="@{/login}">Login</a>
+                    </div>
+                    <div class="d-flex" sec:authorize="isAuthenticated()">
+                        <span class="navbar-text me-3">
+                            Welcome, <span sec:authentication="name"></span>
+                        </span>
+                        <form th:action="@{/logout}" method="post">
+                            <button class="btn btn-outline-light" type="submit">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
