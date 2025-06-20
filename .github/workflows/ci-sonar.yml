@@ -35,6 +35,6 @@ jobs:
         run: |
           mvn clean verify sonar:sonar \
             -Dsonar.projectKey=ghasseen_EPI-Management \
-            -Dsonar.organization=ghasseen-epi-Management \
+            -Dsonar.organization=ghasseen-epi-management \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
