@@ -18,9 +18,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/epidb
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: secret
+      - spring.datasource.url=jdbc:mysql://mysql:3306/epidb
+      - spring.datasource.username=root
+      - spring.datasource.password=secret
     depends_on:
       - mysql
     networks:
